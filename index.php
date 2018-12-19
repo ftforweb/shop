@@ -26,3 +26,5 @@ die;*/
 
 $router = new Router();
 $router->run();
+
+require_once(ROOT. '/views/index.php');
