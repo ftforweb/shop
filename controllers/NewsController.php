@@ -1,6 +1,6 @@
 <?php
 include ROOT."/models/News.php";
-class NewsController {
+class NewsController{
     public function actionIndex(){
         $newsList = News::getNewsList();
         echo '<pre>';
@@ -15,6 +15,7 @@ class NewsController {
             print_r($newsItem);
             echo '</pre>';
         }
+
         return true;
     }
 }

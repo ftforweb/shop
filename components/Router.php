@@ -25,9 +25,9 @@
                 //сравниваем $uriPattern и uri
                 if (preg_match("~$uriPattern~", $uri)){
 
-                    echo '<br>Где ищем (запрос набрал пользователь): '.$uri;
-                    echo '<br>что ищем (совпадение из правил) '.$uriPattern;
-                    echo '<br>кто обрабатывает '.$path;
+//                    echo '<br>Где ищем (запрос набрал пользователь): '.$uri;
+//                    echo '<br>что ищем (совпадение из правил) '.$uriPattern;
+//                    echo '<br>кто обрабатывает '.$path;
 
                    // получаем внутрений путь из внешнего согласно правилу(regExp)
                     $internalRoute = preg_replace("~$uriPattern~", $path, $uri);
@@ -54,15 +54,11 @@
 
                     $controllerObject = new $controllerName;
                     $result = $controllerObject->$actionName($parameters);
-                    $result = call_user_func_array(array($controllerObject, $actionName), $parameters);
                     if ($result != null){
                         break;
                     }
                 }
             }
-
-            //сравниваем $uriPattern и $uri
-
         }
     }
 
